@@ -82,8 +82,8 @@ with the username and user password fields of any record in the database. If
 there is a match, it means the user has provided a correct user name and
 password combination, and should be allowed to login. Like most web
 applications, PHP programs interact with their back-end databases using the
-standard SQL language. In Collabtive, the following SQL query is constructed
-in class.user.php to authenticate users:
+SQL language, in our case MySQL's dialect. In Collabtive, the following SQL
+query is constructed in class.user.php to authenticate users:
 
     $sel1 = mysql_query ("SELECT ID, name, locale, lastlogin, gender, 
                           FROM USERS_TABLE 
