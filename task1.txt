@@ -1,0 +1,10 @@
+login="bob');-- " 
+password="howdy" 
+
+this injection alters the SQL query as follows:
+
+> SELECT ID, name, locale, lastlogin, gender, 
+> FROM USERS_TABLE 
+> WHERE (name = 'bob');-- ' OR email = '$user') AND pass = '$pass'");
+
+... which selects bob's user row specifically and comments out the password check logic
